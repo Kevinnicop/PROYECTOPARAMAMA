@@ -25,3 +25,18 @@ if ('paintWorklet' in CSS) {
 	});
 }
 
+
+const slider = document.querySelector('.kp-slider-box');
+const next = slider.querySelector('.kp-next');
+const prev = slider.querySelector('.kp-prev');
+const track = slider.querySelector('.kp-slider-track');
+
+next.onclick = () => {
+    const cards = track.querySelectorAll('.kp-card');
+    track.appendChild(cards[0]);
+};
+
+prev.onclick = () => {
+    const cards = track.querySelectorAll('.kp-card');
+    track.prepend(cards[cards.length - 1]);
+};
